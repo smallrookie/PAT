@@ -1,4 +1,5 @@
 /*
+ *
  * 题目描述：输入任意（用户，成绩）序列，可以获得成绩从高到低或从低到高的排列,相同成绩都按先录入排列在前的规则处理。
  *
  * 输入描述：输入多行，先输入要排序的人的个数，然后输入排序方法0（降序）或者1（升序）再分别输入他们的名字和成绩，以一个空格隔开。
@@ -18,7 +19,6 @@
  *        fang 90
  *        ning 70
  *        yang 50
- *
  *
  */
 
@@ -47,7 +47,8 @@ int main() {
             p = (pStu)malloc(sizeof(Student));
             scanf("%s%d", p->name, &p->score);
             p->next = NULL;
-
+			
+			// 直接插入排序
             pStu q = head;
             while (q->next && (type == 0 ? q->next->score >= p->score : q->next->score <= p->score))
                 q = q->next;
