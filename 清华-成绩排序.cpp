@@ -48,7 +48,7 @@ int main() {
             scanf("%s%d", p->name, &p->score);
             p->next = NULL;
 			
-			// 直接插入排序
+            // 直接插入排序
             pStu q = head;
             while (q->next && (type == 0 ? q->next->score >= p->score : q->next->score <= p->score))
                 q = q->next;
