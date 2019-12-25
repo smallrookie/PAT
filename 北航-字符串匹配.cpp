@@ -33,18 +33,16 @@ bool isLetter(char c) {
 }
 
 bool isSame(char a, char b) {
-    if (isLetter(a) == 0 || isLetter(b) == 0) {
+    if (!isLetter(a) || !isLetter(b)) {
         if (a == b)
             return true;
         else
             return false;
     }
-    else {
-        if ((a == b) || (a == b + 'A' - 'a') || (a == b + 'a' - 'A'))
-            return true;
-        else
-            return false;
-    }
+    else if ((a == b) || (a == b + 'A' - 'a') || (a == b + 'a' - 'A'))
+        return true;
+    else
+        return false;
 }
 
 bool Bracket(string t, string p, int &pos_t, int &pos_p) {
