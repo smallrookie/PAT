@@ -77,6 +77,7 @@ int main()
                     if(third - tmp == diff)
                         cout << third << " ";
                 }
+                x = second;
                 cout << endl;
             }
             else
