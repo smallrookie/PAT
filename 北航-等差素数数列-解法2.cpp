@@ -40,7 +40,7 @@ int main()
     while (cin >> a >> b)
     {
 
-        int first, second, third, dif;
+        int first, second, third, diff;
         int x = a - 1;
         while (x <= b)
         {
@@ -60,24 +60,22 @@ int main()
             if(x > b)
                 break;
 
-            dif = second - first;
-            if(third - second == dif)
+            diff = second - first;
+            if(third - second == diff)
             {
                 cout << first << " " << second << " " << third << " ";
 
                 int tmp = second;
-                while(third - tmp == dif)
+                while(third - tmp == diff)
                 {
-
                     tmp = third;
-
-                    tmp = getNextPrime(x);
-                    x = tmp;
+                    third = getNextPrime(x);
+                    x = third;
                     if (x > b)
                         break;
 
-                    if(tmp - third == dif)
-                        cout << tmp << " ";
+                    if(third - tmp == diff)
+                        cout << third << " ";
                 }
                 cout << endl;
             }
