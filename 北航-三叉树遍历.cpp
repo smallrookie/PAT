@@ -213,7 +213,7 @@ int main() {
 
             // 查找目标结点
             targetNode = searchNode(root, t[i].target);
-            //cout << "Root: " << root->val << " " << "targetNode: " << targetNode->val << endl;
+            // cout << "Root: " << root->val << " " << "targetNode: " << targetNode->val << endl;
 
             // 查找curNode与targetNode间共同的父结点
             sameRoot = getNearestRoot(root, curNode, targetNode);
