@@ -55,17 +55,17 @@ int main()
             int second = v[i - 1];
             int third = v[i];
 
-            int dif = second - first;
-            if (third - second == dif)
+            int diff = second - first;
+            if (third - second == diff)
             {
                 cout << first << " " << second << " " << third << " ";
 
                 int tmp = second;
-                while (third - tmp == dif)
+                while (third - tmp == diff)
                 {
                     tmp = third;
                     i++;
-                    if (v[i] - tmp == dif)
+                    if (v[i] - tmp == diff)
                     {
                         cout << v[i] << " ";
                     }
