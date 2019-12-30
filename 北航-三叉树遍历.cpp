@@ -195,6 +195,7 @@ int main() {
         for (int i = 0; i < n; ++i) {
             cin >> rt >> a >> b >> c;
             node = createTree(node, rt, a, b, c);
+            // cout << node->val << endl;
         }
 
         cin >> m;
