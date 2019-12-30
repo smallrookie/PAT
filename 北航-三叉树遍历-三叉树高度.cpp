@@ -21,7 +21,7 @@ struct Tree {
     Tree(int id) : id(id), lchild(NULL), mchild(NULL), rchild(NULL) {}
 } *t[500];
 
-struct target {
+struct mrr {
     int id;
     int order;
     int height;
@@ -40,7 +40,7 @@ int threeNum = 0;
 int order = 1;
 int index = 0;
 
-bool cmp(target a, target b) {
+bool cmp(mrr a, mrr b) {
     return a.height > b.height;
 }
 
@@ -137,27 +137,21 @@ int main() {
                 getDepth(root, threeChild[i], 1);
             }
             sort(ans, ans + index, cmp);
-            for (int i = 0; ans[i].height == ans[0].height; ++i) {
-                cout << ans[i].id << " " << ans[i].order << endl;
-            }
+            cout << ans[0].id << " " << ans[0].order << endl;
         }
         else if (twoNum > 0) {
             for (int i = 0; i < threeNum; ++i) {
                 getDepth(root, twoChild[i], 1);
             }
             sort(ans, ans + index, cmp);
-            for (int i = 0; ans[i].height == ans[0].height; ++i) {
-                cout << ans[i].id << " " << ans[i].order << endl;
-            }
+            cout << ans[0].id << " " << ans[0].order << endl;
         }
         else {
             for (int i = 0; i < oneNum; ++i) {
                 getDepth(root, oneChild[i], 1);
             }
             sort(ans, ans + index, cmp);
-            for (int i = 0; ans[i].height == ans[0].height; ++i) {
-                cout << ans[i].id << " " << ans[i].order << endl;
-            }
+            cout << ans[0].id << " " << ans[0].order << endl;
         }
     }
     return 0;
