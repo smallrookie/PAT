@@ -56,6 +56,33 @@ int maxDepth(Node *root, int n) {
     return leftNum > rightNum ? leftNum : rightNum;
 }
 
+Node *lowestAncestor(Node *root, Node *o1, Node *o2) {
+
+    if (root == NULL || root == o1 || root == o2)
+        return root;
+
+    Node *left = lowestAncestor(root->left, o1, o2);
+    Node *right = lowestAncestor(root->right, o1, o2);
+
+    if (left != NULL && right != NULL)
+        return root;
+
+    return left != NULL ? left : right;
+}
+
+Node *findNode(Node *node, int x) {
+
+    if (node == NULL)
+        return NULL;
+
+    if (x == node->val)
+        return node;
+    else if (x < node->val)
+        return findNode(node->left, x);
+    else
+        return findNode(node->right, x);
+}
+
 
 int main() {
 
@@ -75,6 +102,13 @@ int main() {
 
         int depth = maxDepth(root, 0);
         cout << depth << endl;
+
+        Node *o1 = findNode(root, 5);
+        Node *o2 = findNode(root, 8);
+        cout << "findNode: " << o1->val << " " << o2->val << endl;
+
+        Node *ancestor = lowestAncestor(root, o1, o2);
+        cout << "lowestAncestor: " << ancestor->val << endl;
     }
 
     return 0;
