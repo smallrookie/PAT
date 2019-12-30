@@ -99,6 +99,7 @@ Tree* preOrder(Tree *root, int x) {
         }
         else return node;
     }
+    return NULL;
 }
 
 Tree* getNearestRoot(Tree *root, Tree *curNode, Tree *targetNode) {
@@ -182,6 +183,7 @@ Tree* createTree(Tree *root, int p, int l, int m, int r) {
         q.pop();
         return node;
     }
+    return NULL;
 }
 
 int main() {
@@ -214,7 +216,7 @@ int main() {
 
             // 查找目标结点
             targetNode = searchNode(root, t[i].target);
-            //cout << "Root: " << root->val << " " << "targetNode: " << targetNode->val << endl;
+            // cout << "Root: " << root->val << " " << "targetNode: " << targetNode->val << endl;
 
             // 查找curNode与targetNode间共同的父结点
             sameRoot = getNearestRoot(root, curNode, targetNode);
@@ -234,9 +236,8 @@ int main() {
             // cout << "preOrder sameRoot: " << sameRoot->val << endl;
 
             // cout << "after preOrder, res size: " << res.size() << endl;
-            int len = res.size();
-            for (int i = 0; i < len; ++i)
-                cout << res[i] << " ";
+            for (int j = 0; j < res.size(); ++j)
+                cout << res[j] << " ";
             cout << targetNode->val << " " << endl;
 
             curNode = targetNode;
